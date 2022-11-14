@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: red;
+}
+
+.logo-container {
+    padding-top: 5px;
+    height: 80px;
+    width: 200px;
+}
+
+.logo-container img {
+    height: 100px;
+    width: 200px;
+    align-content: center;
+}
+
+.searchbar-cont {
+    width: 300px;
+}
+
+.create-cont {
+    padding-right: 30px;
+}
+

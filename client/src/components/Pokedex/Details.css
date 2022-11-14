@@ -1,0 +1,46 @@
+.mother-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.detail-cont {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 60%;
+    border-radius: 30px;
+    border: solid 5px black;
+    margin-top: 30px;
+}
+
+.detail-cont h2{
+    text-align: center;
+}
+
+.detail-cont span {
+    display: flex;
+    justify-content: center;
+}
+
+.stats-cont {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.type-cont {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px 0;
+}
+
+.type-cont span img {
+    width: 70px;
+    height: 70px;
+}
+
+.type-cont span img:hover {
+    filter: saturate(200%);
+    transform: scale(1.1);
+    cursor: pointer;
+}

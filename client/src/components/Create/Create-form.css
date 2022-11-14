@@ -1,0 +1,31 @@
+.create-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    width: 50%;
+    background-color: white;
+    border-radius: 30px;
+    padding: 50px 20px;
+}
+
+.createpoke-button {
+    margin-top: 30px;
+}
+
+.header{
+    width: 100%;
+}
+
+.header img {
+    width: 100%;
+    object-fit: cover;
+}
+
