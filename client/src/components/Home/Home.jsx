@@ -89,13 +89,13 @@ export default function Home () {
             <div className='order'>
                 <select id='types' onChange={(event) => handleFilterByType(event)}>
                     <option value="type">Select the type</option>
-                    <option value="all">All</option>
+                    <option value="All">All</option>
                     {types.map((type) => {
                         return <option key={type.id} value={type.name}>{type.name}</option>
                     })}
                 </select>
                 <select id='created' onChange={(event) => handleFilterByCreated(event)}>
-                    <option value="all">All</option>
+                    <option value="All">All</option>
                     <option value="created">Customized</option>
                     <option value="not-created">Not Customized</option>
                 </select>
@@ -104,7 +104,7 @@ export default function Home () {
                 <button type='submit' className='reset-button' onClick={(event) => handleReset(event)}>Reset</button>
             </div>
 
-            {currentPokemons.length > 0 ? 
+            {currentPokemons.length > 0 && pokemons.length > 12 ? 
             <Pagination pokemonsPerPage={pokemonsPerPage} pokemons={pokemons.length} pagination={pagination} currentPage={currentPage}/> : 
             null }
             <div className='pokemons-grid'>

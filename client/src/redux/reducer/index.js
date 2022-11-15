@@ -12,7 +12,8 @@ const rootReducer = (state = initialState, action) => {
         case GET_ALL_POKEMONS:
             return {
                 ...state,
-                pokemons: action.payload
+                pokemons: action.payload,
+                filtered: action.payload
             };
         case GET_POKEMON_BYNAME:
             return {
@@ -35,16 +36,20 @@ const rootReducer = (state = initialState, action) => {
             };
         case FILTER_BY_TYPE:
             // state.pokemons.types.map(type => type.name)
-            let byType = state.pokemons?.filter((pokemon) => pokemon.types.map((type) => type.name)?.includes(action.payload) || pokemon.types.includes(action.payload));
-            if (action.payload === 'all') byType = state.pokemons;
+            // let byType = state.pokemons?.filter((pokemon) => pokemon.types.map((type) => type.name)?.includes(action.payload) || pokemon.types.includes(action.payload));
+            
+            let filtered = state.filtered;
+            let byType = filtered?.filter((pokemon) => pokemon.types.includes(action.payload))
+            if (action.payload === 'All') byType = filtered;
             return {
                 ...state,
                 pokemons: byType
             };
         case FILTER_BY_CREATED:
-            let byCreated = action.payload === 'created' ? state.pokemons.filter(pokemon => pokemon.custom === true) : state.pokemons.filter(pokemon => pokemon.custom === false);
-            if (!byCreated.length) return alert ('Pokemons not founded');
-            if (action.payload === 'all') byCreated = state.pokemons;
+            let filtered2 = state.filtered;
+            let byCreated = action.payload === 'created' ? filtered2.filter(pokemon => pokemon.custom === true) : filtered2.filter(pokemon => !pokemon.custom);
+            if (action.payload === 'All') byCreated = filtered2;
+            // if (!byCreated.length) return alert ('Pokemons not founded');
             return {
                 ...state,
                 pokemons: byCreated

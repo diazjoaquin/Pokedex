@@ -17,7 +17,7 @@ const Pagination = ({pokemonsPerPage, pokemons, pagination, currentPage}) => {
                 {
                     numOfPages?.map((page) => {
                         return <button className="page-num" key={page}>
-                        { currentPage === page ? <a onClick={() => pagination(page)}>{page}</a> : <a onClick={() => pagination(page)}>{page}</a>}
+                        { currentPage === page ? <a id="first-pag" onClick={() => pagination(page)}>{page}</a> : <a id="second-pag" onClick={() => pagination(page)}>{page}</a>}
                         </button>
                     })
                     

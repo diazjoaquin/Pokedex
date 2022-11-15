@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getTypes, createPokemon} from '../../redux/actions/index.js';
+import { Link } from "react-router-dom";
 import './Create-form.css';
 
 // The useHistory hook gives you access to the history instance that you may use to navigate.
@@ -102,6 +103,9 @@ const Create = () => {
     return (
         <section className="create-section">
             <header className="header"></header>
+            <Link to={'/home'}>
+                <div className="back-home-cont"><button className="back-home-butt">Back Home</button></div>
+            </Link>
             <div><h2>CREA TU PROPIO POKEMON:</h2></div>
             <form className="form-cont" onSubmit={handleSubmit}>
                 <label>Name: </label>
