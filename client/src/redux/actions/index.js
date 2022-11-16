@@ -37,16 +37,16 @@ export const getPokemonByName = (name) => async dispatch => {
 
 export const getPokemonDetail = (id) => async dispatch => {
     try {
-        const details = await axios.get(`http://localhost:3001/pokemons/${id}`);
-        return dispatch({
-            type: GET_POKEMON_DETAIL,
-            payload: details.data
-        });
-        // return await axios.get(`http://localhost:3001/pokemons/${id}`)
-        // .then(response => dispatch({
+        // const details = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        // return dispatch({
         //     type: GET_POKEMON_DETAIL,
-        //     payload: response.data
-        // }))
+        //     payload: details.data
+        // });
+        return await axios.get(`http://localhost:3001/pokemons/${id}`)
+        .then(response => dispatch({
+            type: GET_POKEMON_DETAIL,
+            payload: response.data
+        }))
     } catch (error) {
         throw new Error ("cannot get details");
     }

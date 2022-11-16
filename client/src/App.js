@@ -24,8 +24,7 @@ function App() {
       exact path={"/details/:id"}
       component={Details}
       />
-      </div>
-  );
+      </div>)
 }
 
 export default App;

@@ -23,12 +23,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const fromDb = await getPokemonByIdFromDb(id);
-        if (fromDb) {
-            return res.status(200).send(fromDb);
+        if (id < 252 ) {
+            const response = await getPokemonById(id);
+            return res.status(200).send(response);
         } else {
-        const response = await getPokemonById(id);
-        return res.status(200).send(response);}
+            const fromDb = await getPokemonByIdFromDb(id);
+            return res.status(200).send(fromDb);
+        }
     } catch (error) {
         res.status(400).send(error.message);
     }
