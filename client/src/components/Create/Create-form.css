@@ -25,6 +25,11 @@
     text-align: center;
 }
 
+.back-home-butt:hover{
+    transform: scale(1.2);
+    background-color: rgb(255, 0, 0);
+}
+
 .form-cont {
     display: flex;
     flex-direction: column;
@@ -65,16 +70,10 @@
     border-radius: 15px;
     border: none;
     margin: 15px 10px;
-    width: 150px;
-    text-align: center;
-}
-
-.selected button {
-    margin-left: 5px;
-    border-radius: 15px;
-    border: none;
-    background-color: white;
-    color: red;
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .createpoke-button {
@@ -96,5 +95,30 @@
 .header img {
     width: 100%;
     object-fit: cover;
+}
+
+.delete-type-cont {
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+}
+
+.delete-type-button {
+    margin-left: 5px;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    background: none;
+    width: 20px;
+    height: 20px;
+    padding: auto;
+    text-align: center;
+}
+
+.delete-type-button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    color: red;
 }
 

@@ -11,6 +11,12 @@
     justify-content: center;
 }
 
+/* .grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
 .pokemons-grid {
     --gap: 40px;
     --num--cols: 4;
@@ -23,6 +29,7 @@
     grid-template-columns: repeat(var(--num--cols), 1fr);
     grid-auto-rows: var(--row--height);
     gap: var(--gap);
+    justify-self: center;
 }
 
 .filter-butt, .order-butt {
@@ -37,6 +44,12 @@
 }
 
 .filter-butt:hover, .order-butt:hover {
+    transform: scale(1.3);
+    filter:saturate(200%);
+    cursor: pointer;
+}
+
+.reset-button:hover{
     transform: scale(1.3);
     filter:saturate(200%);
     cursor: pointer;

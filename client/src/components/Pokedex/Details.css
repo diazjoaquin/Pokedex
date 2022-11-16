@@ -1,17 +1,26 @@
+.details-section {
+    background: url("https://images2.alphacoders.com/837/837971.png");
+    background-position: center;
+    background-size:cover;
+}
+
 .mother-cont {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    min-height: 100vh;
 }
 
 .detail-cont {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    width: 50%;
+    background-color: rgb(229, 14, 14);
+    width: 40%;
+    height: 880px;
     border-radius: 30px;
-    border: solid 5px black;
     margin-top: 30px;
+    color: #fff;
+    filter: drop-shadow(0 0 5px #fff);
 }
 
 .detail-cont h2{
@@ -21,6 +30,13 @@
 .detail-cont span {
     display: flex;
     justify-content: center;
+}
+
+.detail-cont .pokemon-img-cont {
+    height: 70%;
+    background: url("https://www.iconninja.com/files/965/672/888/longico-pikachu-pokeball-pokemon-icon.svg");
+    background-position: center;
+    background-size:cover;
 }
 
 .detail-cont span img {
@@ -68,6 +84,12 @@
 }
 
 .delete-button:hover{
-    transform: scale(1.2);
-    background-color: rgb(255, 0, 0);
+        transform: scale(1.2);
+        background-color: rgb(255, 0, 0);
+}
+
+.back-home-container {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 40px;
 }

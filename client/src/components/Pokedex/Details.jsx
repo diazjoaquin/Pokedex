@@ -28,12 +28,12 @@ export default function Details (props) {
         <section className="details-section">
             <Nav/>
             <Link to={'/home'}>
-                <div className="back-home-cont"><button className="back-home-butt">Back Home</button></div>
+                <div className="back-home-container"><button className="back-home-butt">Back Home</button></div>
             </Link>
             <div className="mother-cont">
                 <div className="detail-cont">
                     <h2>{detail.name}</h2>
-                    <span><img src={detail.imgUrl} alt=""/></span>
+                    <span className="pokemon-img-cont"><img src={detail.imgUrl} alt=""/></span>
                     <div className="type-cont">{detail.types?.map((type) => {
                                 switch(type){
                                     case "normal":
@@ -79,12 +79,12 @@ export default function Details (props) {
                         }
                     </div>
                     <div className="stats-cont">
-                        <div className="heart">HP:{detail.hp}</div>
-                        <div className="attack">ATTACK:{detail.attack}</div>
-                        <div className="defense">DEFENSE:{detail.defense}</div>
-                        <div className="speed">SPEED:{detail.speed}</div>
-                        <div className="height">HEIGHT:{detail.height}</div>
-                        <div className="weight">WEIGHT:{detail.weight}</div>
+                        <div className="heart">HP: {detail.hp}</div>
+                        <div className="attack">ATTACK: {detail.attack}</div>
+                        <div className="defense">DEFENSE: {detail.defense}</div>
+                        <div className="speed">SPEED: {detail.speed}</div>
+                        <div className="height">HEIGHT: {detail.height}</div>
+                        <div className="weight">WEIGHT: {detail.weight}</div>
                     </div>
                     { detail.custom ? <div className="delete-cont"><button className="delete-button" onClick={(e) => handleDelete(e)}>delete</button></div> : null}
                 </div>

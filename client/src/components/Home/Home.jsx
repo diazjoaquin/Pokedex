@@ -120,7 +120,6 @@ export default function Home () {
             </div>
                 <Pagination pokemonsPerPage={pokemonsPerPage} pokemons={pokemons.length} pagination={pagination} currentPage={currentPage}
                 handlePrevious={handlePrevious} handleNext={handleNext}/>
-
             <div className='pokemons-grid'>
                     {
                         currentPokemons.map((pokemon) => {

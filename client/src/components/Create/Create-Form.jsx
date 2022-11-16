@@ -140,7 +140,7 @@ const Create = () => {
                 <div className="selected">
                     {
                     form.types?.map((type) => {
-                        return <span key={type}>{type}<button className="delete-button" onClick={() => handleDelete(type)}>x</button></span>
+                        return <span key={type} className="delete-type-cont">{type}<button className="delete-type-button" onClick={() => handleDelete(type)}>x</button></span>
                     })
                     }
                 </div>
