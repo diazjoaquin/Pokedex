@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTypes, createPokemon} from '../../redux/actions/index.js';
 import { Link } from "react-router-dom";
 import './Create-form.css';
+import Footer from "../Footer/Footer.jsx";
 
 // The useHistory hook gives you access to the history instance that you may use to navigate.
 // function HomeButton() {
@@ -102,11 +103,10 @@ const Create = () => {
 
     return (
         <section className="create-section">
-            <header className="header"></header>
             <Link to={'/home'}>
                 <div className="back-home-cont"><button className="back-home-butt">Back Home</button></div>
             </Link>
-            <div><h2>CREA TU PROPIO POKEMON:</h2></div>
+            <div><h2>CREATE YOUR OWN POKEMON</h2></div>
             <form className="form-cont" onSubmit={handleSubmit}>
                 <label>Name: </label>
                 <input type="text" name="name" value={form.name} onChange={handleChange}></input>
@@ -132,7 +132,7 @@ const Create = () => {
                 <label>image: </label>
                 <input type="url" name="image" value={form.imgUrl} onChange={handleChange}></input>
                 <label>types:</label>
-                <select name="type" onChange={handleSelect}>
+                <select className="select-button" name="type" onChange={handleSelect}>
                     {types.map((type) => {
                     return <option key={type.id} value={type.name}>{type.name}</option>
                     })}
@@ -140,12 +140,13 @@ const Create = () => {
                 <div className="selected">
                     {
                     form.types?.map((type) => {
-                        return <span>{type}<button className="delete-button" onClick={() => handleDelete(type)}>x</button></span>
+                        return <span key={type}>{type}<button className="delete-button" onClick={() => handleDelete(type)}>x</button></span>
                     })
                     }
                 </div>
                 <button type="submit" className="createpoke-button">Create Pokemon</button>
             </form>
+            <Footer/>
         </section>
     )
 }

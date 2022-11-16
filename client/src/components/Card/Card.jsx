@@ -8,7 +8,7 @@ export default function Card ({id, name, types, img}) {
     return (
         <Link to={`/details/${id}`}>
             <div className="card-cont">
-                <div className="id-cont" key={id}><h3>{id}</h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png"/></div>
+                <div className="id-cont" key={id}><h3>{id}</h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png" alt=""/></div>
                 <div className="name-cont"><h3 className="card-name">{name}</h3></div>
                 <div className="img-cont"><img src={img} alt="imagen"/></div>
                 <div className="types-cont">
@@ -23,7 +23,7 @@ export default function Card ({id, name, types, img}) {
                                 case "flying":
                                     return <span key={type + id}><img className="flying" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pok%C3%A9mon_Flying_Type_Icon.svg/1024px-Pok%C3%A9mon_Flying_Type_Icon.svg.png" alt=""/></span>;
                                 case "poison":
-                                    return <span key={type + id}><img className="poison" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Pok%C3%A9mon_Poison_Type_Icon.svg/1024px-Pok%C3%A9mon_Poison_Type_Icon.svg.png" alt="NF"/></span>;
+                                    return <span key={type + id}><img className="poison" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Pok%C3%A9mon_Poison_Type_Icon.svg/1024px-Pok%C3%A9mon_Poison_Type_Icon.svg.png" alt=""/></span>;
                                 case "ground":
                                     return <span key={type + id}><img className="ground" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pok%C3%A9mon_Ground_Type_Icon.svg/1024px-Pok%C3%A9mon_Ground_Type_Icon.svg.png" alt=""/></span>;
                                 case "rock":
@@ -60,5 +60,5 @@ export default function Card ({id, name, types, img}) {
                 </div>
             </div>
         </Link>
-)
+    )
 }

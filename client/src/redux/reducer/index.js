@@ -1,4 +1,4 @@
-import { CREATE_POKEMON, FILTER_BY_CREATED, FILTER_BY_TYPE, GET_ALL_POKEMONS, GET_POKEMON_BYNAME, GET_POKEMON_DETAIL, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "../actions";
+import { CREATE_POKEMON, DELETE_POKEMON, FILTER_BY_CREATED, FILTER_BY_TYPE, GET_ALL_POKEMONS, GET_POKEMON_BYNAME, GET_POKEMON_DETAIL, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "../actions";
 
 const initialState = {
     pokemons: [],
@@ -34,6 +34,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state
             };
+        case DELETE_POKEMON:
+            return {
+                ...state,
+                pokemonDetail: {},
+            }
         case FILTER_BY_TYPE:
             // state.pokemons.types.map(type => type.name)
             // let byType = state.pokemons?.filter((pokemon) => pokemon.types.map((type) => type.name)?.includes(action.payload) || pokemon.types.includes(action.payload));

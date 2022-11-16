@@ -1,9 +1,9 @@
-import './App.css';
 import { Route } from 'react-router-dom';
 import Landing from './components/Landing-Page/Landing.jsx';
 import Home from './components/Home/Home.jsx';
 import Create from './components/Create/Create-Form';
 import Details from './components/Pokedex/Details';
+
 
 function App() {
   return (

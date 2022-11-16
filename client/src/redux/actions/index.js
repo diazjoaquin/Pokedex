@@ -8,6 +8,7 @@ export const FILTER_BY_TYPE = 'FILTER_BY_TYPE';
 export const FILTER_BY_CREATED = 'FILTER_BY_CREATED';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_ATTACK = 'ORDER_BY_ATTACK';
+export const DELETE_POKEMON = 'DELETE_POKEMON';
 
 
 export const getAllPokemons = () => async dispatch => {
@@ -35,11 +36,20 @@ export const getPokemonByName = (name) => async dispatch => {
 };
 
 export const getPokemonDetail = (id) => async dispatch => {
-    const getPokemonsDetails = await axios.get(`http://localhost:3001/pokemons/${id}`);
-    return dispatch({
-        type: GET_POKEMON_DETAIL,
-        payload: getPokemonsDetails.data
-    });
+    try {
+        const details = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        return dispatch({
+            type: GET_POKEMON_DETAIL,
+            payload: details.data
+        });
+        // return await axios.get(`http://localhost:3001/pokemons/${id}`)
+        // .then(response => dispatch({
+        //     type: GET_POKEMON_DETAIL,
+        //     payload: response.data
+        // }))
+    } catch (error) {
+        throw new Error ("cannot get details");
+    }
 };
 
 export const getTypes = () => async dispatch => {
@@ -49,7 +59,8 @@ export const getTypes = () => async dispatch => {
         //     type: GET_TYPES,
         //     payload: getType.data
         // });
-        return await axios.get('http://localhost:3001/types').then(response => dispatch({
+        return await axios.get('http://localhost:3001/types')
+        .then(response => dispatch({
             type: GET_TYPES,
             payload: response.data
         }))
@@ -69,10 +80,12 @@ try {
     }
 };
 
-export const deletePokemon = async (id) => {
+export const deletePokemon = (id) => async dispatch => {
     try {
         await axios.delete(`http://localhost:3001/pokemons/${id}`);
-        return alert("Pokemon successfully deleted")
+        return dispatch({
+            type: DELETE_POKEMON
+        })
     } catch (error) {
         throw new Error ("Cannot delete pokemon");
     }

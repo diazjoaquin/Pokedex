@@ -25,7 +25,7 @@ export default function Search () {
     return (
         <div className="search-cont">
             <input type="search" placeholder="Search Pokemon..."
-            value={input} className="search-button"
+            value={input} className="search-input"
             onChange={(event) => handleChange(event)}></input>
             <button className="search-button"
             onClick={(event) => handleSubmit(event)}>Search</button>

@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
     try {
         let { name, hp, attack, defense, speed, height, weight, imgUrl, types, custom } = req.body;
         const pokemonDb = await Pokemon.findAll();
-        let id = 151 + pokemonDb.length;
+        let id = 251 + pokemonDb.length;
         const find = await Pokemon.findOne({ where: {name: name}})
 
         

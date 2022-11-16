@@ -2,6 +2,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+    background: url("https://images3.alphacoders.com/273/273289.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.back-home-cont{
+    display: flex;
+    margin-top: 30px;
+    
+}
+
+.back-home-butt{
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(0, 162, 255);
+    border: none;
+    height: 30px;
+    width: 100px;
+    margin: 0 5px;
+    text-align: center;
 }
 
 .form-cont {
@@ -11,13 +32,61 @@
     align-items: center;
     max-width: 500px;
     width: 50%;
-    background-color: white;
+    background-color: rgb(211, 3, 3);
+    color: white;
     border-radius: 30px;
     padding: 50px 20px;
+    margin-bottom: 50px;
+}
+
+.form-cont input {
+    width: 200px;
+    border: none;
+    height: 30px;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 5px 5px;
+}
+
+.select-button{
+    margin-top: 30px;
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(8, 210, 52);
+    border: none;
+    height: 30px;
+    width: 90px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.selected{
+    color: white;
+    border-radius: 15px;
+    border: none;
+    margin: 15px 10px;
+    width: 150px;
+    text-align: center;
+}
+
+.selected button {
+    margin-left: 5px;
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    color: red;
 }
 
 .createpoke-button {
-    margin-top: 30px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(8, 210, 52);
+    border: none;
+    height: 35px;
+    width: 150px;
+    margin: 0 5px;
+    text-align: center;
 }
 
 .header{
