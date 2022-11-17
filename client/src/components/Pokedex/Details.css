@@ -20,7 +20,7 @@
     border-radius: 30px;
     margin-top: 30px;
     color: #fff;
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 5px rgb(63, 62, 62));
 }
 
 .detail-cont h2{
@@ -73,8 +73,8 @@
 }
 
 .delete-button{
-    background-color: rgb(236, 13, 13);
-    color: white;
+    background-color: rgb(98, 0, 255);
+    color: rgb(0, 0, 0);
     margin-bottom: 15px;
     border: none;
     border-radius: 15px;
@@ -85,7 +85,7 @@
 
 .delete-button:hover{
         transform: scale(1.2);
-        background-color: rgb(255, 0, 0);
+        background-color: rgb(59, 226, 4);
 }
 
 .back-home-container {

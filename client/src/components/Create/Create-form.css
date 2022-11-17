@@ -65,6 +65,11 @@
     text-align: center;
 }
 
+.select-button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
 .selected{
     color: white;
     border-radius: 15px;
@@ -86,6 +91,11 @@
     width: 150px;
     margin: 0 5px;
     text-align: center;
+}
+
+.createpoke-button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .header{

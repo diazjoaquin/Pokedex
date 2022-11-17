@@ -5,6 +5,7 @@ const initialState = {
     filtered: [],
     pokemonDetail: {},
     types: [],
+    loader: false,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -13,12 +14,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemons: action.payload,
-                filtered: action.payload
+                filtered: action.payload,
+                loader: true
             };
         case GET_POKEMON_BYNAME:
             return {
                 ...state,
-                pokemons: state.pokemons.filter((pokemon) => pokemon.name === action.payload.name)
+                pokemons: state.pokemons.filter((pokemon) => pokemon.name === action.payload.name),
+                loader: true
             };
         case GET_POKEMON_DETAIL:
             return {

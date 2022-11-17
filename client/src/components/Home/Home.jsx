@@ -5,11 +5,14 @@ import './Home.css';
 import Nav from '../Nav/Nav.jsx';
 import Card from '../Card/Card.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer.jsx';
+import Loader from '../Loader/Loader.jsx';
 
 
 export default function Home () {
 
+    // loader
+    const loader = useSelector(state => state.loader);
 
     // pagination elements:
     const pokemons = useSelector(state => state.pokemons);
@@ -27,10 +30,18 @@ export default function Home () {
     const [order, setOrder] = useState('');
     console.log(order);
 
+    // loader
+    // const [loader, setLoader] = useState(false);
+
+    // const [data, setData] = useState(null);
+
+    // message
+    // const [error, setError] = useState(null);
+
     useEffect(() => {
         dispatch(getAllPokemons());
         dispatch(getTypes());
-    }, [dispatch])
+    }, [dispatch]);
 
     // filtering:
 
@@ -122,7 +133,7 @@ export default function Home () {
                 handlePrevious={handlePrevious} handleNext={handleNext}/>
             <div className='pokemons-grid'>
                     {
-                        currentPokemons.map((pokemon) => {
+                        !loader ? <Loader/> : currentPokemons.map((pokemon) => {
                             return (
                                 <Card
                                 id={pokemon.id}
@@ -135,6 +146,10 @@ export default function Home () {
                             })
                         }
             </div>
+            <Pagination pokemonsPerPage={pokemonsPerPage} pokemons={pokemons.length} pagination={pagination} currentPage={currentPage}
+                handlePrevious={handlePrevious} handleNext={handleNext}/>
+                <br></br>
+                <br></br>
             <Footer/>
         </section>
     );

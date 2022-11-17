@@ -37,16 +37,16 @@ export const getPokemonByName = (name) => async dispatch => {
 
 export const getPokemonDetail = (id) => async dispatch => {
     try {
-        // const details = await axios.get(`http://localhost:3001/pokemons/${id}`);
-        // return dispatch({
-        //     type: GET_POKEMON_DETAIL,
-        //     payload: details.data
-        // });
-        return await axios.get(`http://localhost:3001/pokemons/${id}`)
-        .then(response => dispatch({
+        const details = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        return dispatch({
             type: GET_POKEMON_DETAIL,
-            payload: response.data
-        }))
+            payload: details.data
+        });
+        // return await axios.get(`http://localhost:3001/pokemons/${id}`)
+        // .then(response => dispatch({
+        //     type: GET_POKEMON_DETAIL,
+        //     payload: response.data
+        // }))
     } catch (error) {
         throw new Error ("cannot get details");
     }
@@ -54,16 +54,16 @@ export const getPokemonDetail = (id) => async dispatch => {
 
 export const getTypes = () => async dispatch => {
     try { 
-        // const getType = await axios.get('http://localhost:3001/types');
-        // return dispatch({
-        //     type: GET_TYPES,
-        //     payload: getType.data
-        // });
-        return await axios.get('http://localhost:3001/types')
-        .then(response => dispatch({
+        const getType = await axios.get('http://localhost:3001/types');
+        return dispatch({
             type: GET_TYPES,
-            payload: response.data
-        }))
+            payload: getType.data
+        });
+        // return await axios.get('http://localhost:3001/types')
+        // .then(response => dispatch({
+        //     type: GET_TYPES,
+        //     payload: response.data
+        // }))
     } catch (error) {
         throw new Error ("Cannot get all types");
     }
