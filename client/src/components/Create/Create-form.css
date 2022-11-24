@@ -25,7 +25,16 @@
     text-align: center;
 }
 
+body.darker .back-home-butt{
+    background-color: rgb(73, 73, 73);
+}
+
 .back-home-butt:hover{
+    transform: scale(1.2);
+    background-color: rgb(255, 0, 0);
+}
+
+body.darker .back-home-butt:hover{
     transform: scale(1.2);
     background-color: rgb(255, 0, 0);
 }
@@ -42,6 +51,10 @@
     border-radius: 30px;
     padding: 50px 20px;
     margin-bottom: 50px;
+}
+
+body.darker .form-cont {
+    background-color: #39383c;
 }
 
 .form-cont input {
@@ -63,6 +76,10 @@
     width: 90px;
     margin: 0 5px;
     text-align: center;
+}
+
+body.darker .select-button {
+    background-color: red;
 }
 
 .select-button:hover{
@@ -91,6 +108,10 @@
     width: 150px;
     margin: 0 5px;
     text-align: center;
+}
+
+body.darker .createpoke-button {
+    background-color: red;
 }
 
 .createpoke-button:hover {

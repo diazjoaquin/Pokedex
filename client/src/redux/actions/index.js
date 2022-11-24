@@ -18,7 +18,7 @@ export const getAllPokemons = () => async dispatch => {
                 type: GET_ALL_POKEMONS,
                 payload: getPokemons.data
             }); 
-        // return await axios.get('http://localhost:3001/pokemons').then(response => dispatch({
+        // return await axios.get('/pokemons').then(response => dispatch({
         //     type: GET_ALL_POKEMONS,
         //     payload: response.data
         // }))
@@ -42,7 +42,7 @@ export const getPokemonDetail = (id) => async dispatch => {
             type: GET_POKEMON_DETAIL,
             payload: details.data
         });
-        // return await axios.get(`http://localhost:3001/pokemons/${id}`)
+        // return await axios.get(`/pokemons/${id}`)
         // .then(response => dispatch({
         //     type: GET_POKEMON_DETAIL,
         //     payload: response.data

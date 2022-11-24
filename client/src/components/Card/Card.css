@@ -6,6 +6,10 @@
     border: 3px solid white;
 }
 
+body.darker .card-cont {
+    background-color: #39383c;
+}
+
 .card-cont:hover{
     transform: scale(1.1);
     filter: drop-shadow(0 0 50px white);

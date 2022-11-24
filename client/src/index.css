@@ -5,6 +5,7 @@ body {
   font-family: 'Alegreya SC', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: .3s ease all;
 }
 
 body a {

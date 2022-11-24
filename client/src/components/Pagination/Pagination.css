@@ -17,6 +17,10 @@
     margin: 3px;
 }
 
+body.darker .page-num {
+    background-color: rgb(45, 45, 45);
+}
+
 .prev-button, .next-button, .reset-button {
     border-radius: 15px;
     background-color: rgb(0, 162, 255);
@@ -26,6 +30,14 @@
     margin: 0 5px;
     height: 30px;
     width: 80px;
+}
+
+body.darker .next-button{
+    background-color: rgb(45, 45, 45);
+}
+
+body.darker .prev-button{
+    background-color: rgb(45, 45, 45);
 }
 
 .reset-button {

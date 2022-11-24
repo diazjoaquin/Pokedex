@@ -11,6 +11,10 @@
     font-weight: 800;
 }
 
+body.darker .search-button {
+    background-color: rgb(73, 73, 73);
+}
+
 .search-button:hover{
     filter:saturate(200%);
     transform: scale(1.2);

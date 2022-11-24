@@ -9,6 +9,10 @@
     background-color: red;
 }
 
+body.darker .navbar {
+    background-color: #000;
+}
+
 .logo-container {
     width: 200px;
     height: 70px;
@@ -39,10 +43,18 @@
     font-weight: 800;
 }
 
+body.darker .create-button {
+    background-color: rgb(73, 73, 73);
+}
+
 .create-button:hover {
     transform: scale(1.2);
     filter: saturate(200%);
     cursor: pointer;
 }
 
+.switch-cont {
+    display: block;
+    margin-top: 5px;
+}
 

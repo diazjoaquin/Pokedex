@@ -23,6 +23,10 @@
     filter: drop-shadow(0 0 5px rgb(63, 62, 62));
 }
 
+body.darker .detail-cont {
+    background-color: #39383c;
+}
+
 .detail-cont h2{
     text-align: center;
 }
@@ -73,19 +77,33 @@
 }
 
 .delete-button{
-    background-color: rgb(98, 0, 255);
-    color: rgb(0, 0, 0);
+    background-color: rgb(68, 68, 68);
+    color: rgb(255, 255, 255);
     margin-bottom: 15px;
     border: none;
     border-radius: 15px;
     width: 80px;
     height: 28px;
     align-items: center;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+body.darker .delete-button {
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+body.darker .delete-button:hover{
+    transform: scale(1.2);
+    filter: saturate(200%);
 }
 
 .delete-button:hover{
         transform: scale(1.2);
-        background-color: rgb(59, 226, 4);
+        filter: saturate(200%);
 }
 
 .back-home-container {

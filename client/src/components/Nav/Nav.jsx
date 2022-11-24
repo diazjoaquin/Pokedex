@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Searchbar from '../Search/Searchbar.jsx';
 import './Nav.css';
+import Switcher from "../Switcher/Switcher.jsx";
 
 
 export default function Nav () {
@@ -15,11 +16,12 @@ export default function Nav () {
                 </div>
             </Link>
             <div className="searchbar-cont"><Searchbar/></div>
-            <div className="create-cont">
-            <Link to={'/create'}>
-            <button className="create-button">Create</button>
-            </Link>
-            </div>
+                <div className="create-cont">
+                    <Link to={'/create'}>
+                    <button className="create-button">Create</button>
+                    </Link>
+                    <div className="switch-cont"><Switcher/></div>
+                </div>
         </nav>
         )
 }
