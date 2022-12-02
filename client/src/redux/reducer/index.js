@@ -1,4 +1,4 @@
-import { CREATE_POKEMON, DELETE_POKEMON, FILTER_BY_CREATED, FILTER_BY_TYPE, GET_ALL_POKEMONS, GET_POKEMON_BYNAME, GET_POKEMON_DETAIL, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from "../actions";
+import { CREATE_POKEMON, DELETE_POKEMON, FILTER_BY_CREATED, FILTER_BY_TYPE, GET_ALL_POKEMONS, GET_POKEMON_BYNAME, GET_POKEMON_DETAIL, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME, CLEAR_DETAIL } from "../actions";
 
 const initialState = {
     pokemons: [],
@@ -6,6 +6,7 @@ const initialState = {
     pokemonDetail: {},
     types: [],
     loader: false,
+    error: {},
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -34,9 +35,14 @@ const rootReducer = (state = initialState, action) => {
                 types: action.payload
             };
         case CREATE_POKEMON:
-            return {
-                ...state
-            };
+            if (action.payload.status === 200) { return {
+                ...state,
+                } 
+            } else { return {
+                ...state, 
+            }
+                
+            }
         case DELETE_POKEMON:
             return {
                 ...state,
@@ -85,6 +91,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemons: byAttack
+            }
+        case CLEAR_DETAIL:
+            return {
+                ...state,
+                pokemonDetail: {}
             }
                 default:
             return {...state};

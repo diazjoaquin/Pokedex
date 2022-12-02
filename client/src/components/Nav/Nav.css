@@ -54,7 +54,8 @@ body.darker .create-button {
 }
 
 .switch-cont {
-    display: block;
-    margin-top: 5px;
+    display: flex;
+    margin-top: 10px;
+    margin-right: 5px;
 }
 

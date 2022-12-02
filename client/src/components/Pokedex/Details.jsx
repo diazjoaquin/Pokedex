@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deletePokemon, getPokemonDetail } from '../../redux/actions/index.js';
+import { deletePokemon, getPokemonDetail, clearDetail } from '../../redux/actions/index.js';
 import './Details.css';
 import Nav from "../Nav/Nav.jsx";
 import { Link, useHistory } from "react-router-dom";
@@ -13,8 +13,10 @@ export default function Details (props) {
     const detail = useSelector(state => state.pokemonDetail);
     const history = useHistory();
 
+
     useEffect(() => {
         dispatch(getPokemonDetail(id))
+        return () => {dispatch(clearDetail())}
     }, [dispatch, id])
 
     const handleDelete = (e) => {

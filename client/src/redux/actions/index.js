@@ -9,11 +9,12 @@ export const FILTER_BY_CREATED = 'FILTER_BY_CREATED';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_ATTACK = 'ORDER_BY_ATTACK';
 export const DELETE_POKEMON = 'DELETE_POKEMON';
+export const CLEAR_DETAIL = 'CLEAR_DETAIL';
 
 
 export const getAllPokemons = () => async dispatch => {
     try {
-        const getPokemons = await axios.get('http://localhost:3001/pokemons');
+        const getPokemons = await axios.get('/pokemons');
             return dispatch({
                 type: GET_ALL_POKEMONS,
                 payload: getPokemons.data
@@ -28,7 +29,7 @@ export const getAllPokemons = () => async dispatch => {
 };
 
 export const getPokemonByName = (name) => async dispatch => {
-    const getPokemonsByName = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
+    const getPokemonsByName = await axios.get(`/pokemons?name=${name}`);
     return dispatch({
         type: GET_POKEMON_BYNAME,
         payload: getPokemonsByName.data
@@ -37,7 +38,7 @@ export const getPokemonByName = (name) => async dispatch => {
 
 export const getPokemonDetail = (id) => async dispatch => {
     try {
-        const details = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        const details = await axios.get(`/pokemons/${id}`);
         return dispatch({
             type: GET_POKEMON_DETAIL,
             payload: details.data
@@ -54,7 +55,7 @@ export const getPokemonDetail = (id) => async dispatch => {
 
 export const getTypes = () => async dispatch => {
     try { 
-        const getType = await axios.get('http://localhost:3001/types');
+        const getType = await axios.get('/types');
         return dispatch({
             type: GET_TYPES,
             payload: getType.data
@@ -71,9 +72,10 @@ export const getTypes = () => async dispatch => {
 
 export const createPokemon = (form) => async dispatch => {
 try {
-    await axios.post('http://localhost:3001/pokemons', form)
+    const data = await axios.post('/pokemons', form);
     return dispatch({
-        type: CREATE_POKEMON
+        type: CREATE_POKEMON,
+        payload: data
     })
 } catch (error) {
         throw new Error ("cannot create pokemon");
@@ -82,7 +84,7 @@ try {
 
 export const deletePokemon = (id) => async dispatch => {
     try {
-        await axios.delete(`http://localhost:3001/pokemons/${id}`);
+        await axios.delete(`/pokemons/${id}`);
         return dispatch({
             type: DELETE_POKEMON
         })
@@ -118,4 +120,16 @@ export const orderByName = (payload) => dispatch => {
         type: ORDER_BY_NAME,
         payload
     })
-}
+};
+
+export const clearDetail = () => dispatch => {
+    return dispatch({
+        type: CLEAR_DETAIL
+    })
+};
+
+/* 
+paginado - no marca en que pagina esta el usuario
+ordenamientos - uno solo.
+focus on blur - 
+*/

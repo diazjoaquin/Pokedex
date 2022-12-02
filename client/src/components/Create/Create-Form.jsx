@@ -6,32 +6,28 @@ import { getTypes, createPokemon} from '../../redux/actions/index.js';
 import { Link } from "react-router-dom";
 import './Create-form.css';
 import Footer from "../Footer/Footer.jsx";
-
-// The useHistory hook gives you access to the history instance that you may use to navigate.
-// function HomeButton() {
-//     let history = useHistory();
   
 
 const validation = (form) => {
 
-    // const regExp = "/(\!\¿\?\¡\)\/\&\$\#\"\=\-\.\,\:\_\;\{\¨\´\+\}\[\]\%\@\*)\w/g"
+    // const regExp = /(\!\¿\?\¡\)\/\&\$\#\"\=\-\.\,\:\_\;\{\¨\´\+\}\[\]\%\@\*)\w/
     const errors = {};
     if(!form.name) errors.name = 'Name is required';
-    if(form.name.length > 0 && form.name.length < 3) errors.name = 'Name must have 3 or more letters';
-    // if (form.name.includes(regExp)) errors.name = 'Signs are not allowed in the name';
+    if (form.name && form.name.includes("/" || "*" || "+" || "$" || "#" || "!" || "%" || "&" || "(" || ")" || "=" || "?" || "¿" || "]" || "{" || "}" || "[" || "-" || "@" || "_" || "," || "." || ":" || "<" || ">")) errors.name = 'Signs are not allowed';
+    if(form.name && form.name.length > 0 && form.name.length < 3) errors.name = 'Name must have 3 or more letters';
     
     if (!form.hp) errors.hp = 'Please enter a valid numer between 1 and 400';
-    if (typeof (form.hp) !== 'number') errors.hp = 'Numbers allowed only';
+    if (form.hp && Number(form.hp) === form.hp) errors.hp = 'Numbers allowed only';
     if (!form.attack) errors.attack = 'Please enter a valid numer between 1 and 350';
-    if (typeof (form.attack) !== 'number') errors.attack = 'Numbers allowed only';
+    // if (form.attack && typeof (form.attack) !== 'number') errors.attack = 'Numbers allowed only';
     if (!form.defense) errors.defense = 'Please enter a valid numer between 1 and 400';
-    if (typeof (form.defense) !== 'number') errors.defense = 'Numbers allowed only';
+    // if (form.defense && typeof (form.defense) !== 'number') errors.defense = 'Numbers allowed only';
     if (!form.speed) errors.speed = 'Please enter a valid numer between 1 and 100';
-    if (typeof (form.speed) !== 'number') errors.speed = 'Numbers allowed only';
+    // if (form.speed && typeof (form.speed) !== 'number') errors.speed = 'Numbers allowed only';
     if (!form.height) errors.height = 'Please enter a valid numer between 1 and 150';
-    if (typeof (form.height) !== 'number') errors.height = 'Numbers allowed only';
+    // if (form.height && typeof (form.height) !== 'number') errors.height = 'Numbers allowed only';
     if (!form.weight) errors.weight = 'Please enter a valid numer between 1 and 300';
-    if (typeof (form.weight) !== 'number') errors.weight = 'Numbers allowed only';
+    // if (form.weight && typeof (form.weight) !== 'number') errors.weight = 'Numbers allowed only';
     
 
     return errors;
@@ -94,11 +90,17 @@ const Create = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setError(validation(form));
-
-
+        if ((Object.keys(error)).length > 0) {
+            return alert ("Make shure to complete all the fields")
+            
+        }
+        if (!form.types.length) {
+        form.types = ['normal'];
+        }
         dispatch(createPokemon(form));
         alert("Pokemon created");
         history.push("/home");
+        
     }
 
     return (
@@ -130,7 +132,7 @@ const Create = () => {
                 <input type="number" min='0' max='300' name="weight" value={form.weight} onChange={handleChange}></input>
                 {error.weight && <span>{error.weight}</span>}
                 <label>image: </label>
-                <input type="url" name="image" value={form.imgUrl} onChange={handleChange}></input>
+                <input type="url" name="image" value={form.image} onChange={handleChange}></input>
                 <label>types:</label>
                 <select className="select-button" name="type" onChange={handleSelect}>
                     {types.map((type) => {
