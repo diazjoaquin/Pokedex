@@ -24,7 +24,7 @@ export const getAllPokemons = () => async dispatch => {
         //     payload: response.data
         // }))
     } catch (error) { 
-        throw new Error ("Cannot get all the pokemons");
+       
     }
 };
 
@@ -49,7 +49,7 @@ export const getPokemonDetail = (id) => async dispatch => {
         //     payload: response.data
         // }))
     } catch (error) {
-        throw new Error ("cannot get details");
+        
     }
 };
 
@@ -66,7 +66,7 @@ export const getTypes = () => async dispatch => {
         //     payload: response.data
         // }))
     } catch (error) {
-        throw new Error ("Cannot get all types");
+        
     }
 };
 
@@ -78,7 +78,7 @@ try {
         payload: data
     })
 } catch (error) {
-        throw new Error ("cannot create pokemon");
+
     }
 };
 
@@ -89,7 +89,7 @@ export const deletePokemon = (id) => async dispatch => {
             type: DELETE_POKEMON
         })
     } catch (error) {
-        throw new Error ("Cannot delete pokemon");
+        
     }
 };
 
@@ -127,9 +127,3 @@ export const clearDetail = () => dispatch => {
         type: CLEAR_DETAIL
     })
 };
-
-/* 
-paginado - no marca en que pagina esta el usuario
-ordenamientos - uno solo.
-focus on blur - 
-*/

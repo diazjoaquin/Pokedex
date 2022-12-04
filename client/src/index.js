@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import * as serviceWorker from './serviceWorker';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
-// axios.defaults.baseURL = "https://ip-pokemon-db-production.up.railway.app/";
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://ip-pokemon-db-production.up.railway.app/";
+// axios.defaults.baseURL = "http://localhost:3001";
 
 ReactDOM.render(
   <Provider store={store}>

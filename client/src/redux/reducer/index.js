@@ -39,7 +39,8 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 } 
             } else { return {
-                ...state, 
+                ...state,
+                error: action.payload.send
             }
                 
             }

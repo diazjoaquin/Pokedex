@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "my-pokedex-diazjoaquin",
-    "public": "build",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
