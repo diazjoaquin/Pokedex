@@ -17,8 +17,19 @@
     margin: 3px;
 }
 
+.active {
+    background-color: rgb(223, 6, 6);
+    transform: scale(1.2);
+}
+
+
 body.darker .page-num {
     background-color: rgb(45, 45, 45);
+}
+
+body.darker .active {
+    background-color: rgb(223, 6, 6)!important;
+    transform: scale(1.2);
 }
 
 .prev-button, .next-button, .reset-button {

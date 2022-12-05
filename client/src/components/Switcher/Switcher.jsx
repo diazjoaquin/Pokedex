@@ -7,7 +7,7 @@ const Switcher = () => {
     const handleChangeTheme = (event) => {
         event.preventDefault();
         document.body.classList.toggle('darker');
-        document.querySelector('.switch').classList.toggle('active');
+        document.querySelector('.switch').classList.toggle('actived');
     }
     
     return (

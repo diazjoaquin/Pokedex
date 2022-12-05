@@ -11,8 +11,8 @@
 .switch::after{
     content: "";
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     position: absolute;
     background-color: #f1f1f1;
     top: 0;
@@ -23,12 +23,12 @@
     box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
 }
 
-.switch.active {
+.switch.actived {
     background: orange;
     color: #000;
 }
 
-.switch.active::after{
+.switch.actived::after{
     right: 0;
     left: unset;
 }

@@ -21,7 +21,12 @@ export default function Home () {
     const last = currentPage * pokemonsPerPage;
     const first = last - pokemonsPerPage;
     const currentPokemons = pokemons.slice(first, last);
-    const pagination = (numberPage) => setCurrentPage(numberPage);
+    const numberOfPages = pokemons.length/pokemonsPerPage
+    const pagination = (numberPage) => {
+        setCurrentPage(numberPage);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        document.getElementById(`${numberPage}`).classList.toggle('active');
+    }
 
     //filtering & ordering:
 
@@ -48,11 +53,15 @@ export default function Home () {
     const handleFilterByType = (event) => {
         dispatch(filterByType(event.target.value))
         setCurrentPage(1);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        document.getElementById("1").classList.toggle('active');
     }
 
     const handleFilterByCreated = (event) => {
         dispatch(filterByCreated(event.target.value))
         setCurrentPage(1);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        document.getElementById("1").classList.toggle('active');
     }
 
     // ordering:
@@ -61,12 +70,16 @@ export default function Home () {
         dispatch(orderByName(event.target.value));
         setOrder(event.target.value);
         setCurrentPage(1);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        document.getElementById("1").classList.toggle('active');
     }
 
     const handleOrderByAttack = (event) => {
         dispatch(orderByAttack(event.target.value));
         setOrder(event.target.value);
         setCurrentPage(1);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        document.getElementById("1").classList.toggle('active');
     }
 
     // reset: 
@@ -80,6 +93,8 @@ export default function Home () {
         document.getElementById('created').value = 'all';
         document.getElementById('types').value = 'type';
         setCurrentPage(1);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        document.getElementById("1").classList.toggle('active');
         alert('Loading...');
     }
 
@@ -87,12 +102,18 @@ export default function Home () {
 
     const handleNext = (event) => {
         event.preventDefault();
-        currentPage < 20 ? setCurrentPage(currentPage + 1) : setCurrentPage(currentPage);
+        currentPage <= numberOfPages ? setCurrentPage(currentPage + 1) : setCurrentPage(currentPage);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        currentPage <= numberOfPages ? document.getElementById(`${currentPage + 1}`).classList.toggle('active') : 
+        document.getElementById(`${currentPage}`).classList.toggle('active');
     }
 
     const handlePrevious = (event) => {
         event.preventDefault();
         currentPage > 1 ? setCurrentPage(currentPage - 1) : setCurrentPage(currentPage);
+        document.getElementById(`${currentPage}`).classList.remove('active');
+        currentPage > 1 ? document.getElementById(`${currentPage - 1}`).classList.toggle('active') :
+        document.getElementById(`${currentPage}`).classList.toggle('active');
     }
 
     return (
@@ -146,8 +167,8 @@ export default function Home () {
                             })
                         }
             </div>
-            <Pagination pokemonsPerPage={pokemonsPerPage} pokemons={pokemons.length} pagination={pagination} currentPage={currentPage}
-                handlePrevious={handlePrevious} handleNext={handleNext}/>
+            {/* <Pagination pokemonsPerPage={pokemonsPerPage} pokemons={pokemons.length} pagination={pagination} currentPage={currentPage}
+                handlePrevious={handlePrevious} handleNext={handleNext}/> */}
                 <br></br>
                 <br></br>
             <Footer/>
