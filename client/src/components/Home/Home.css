@@ -15,12 +15,6 @@ body.darker .section-home {
     justify-content: center;
 }
 
-/* .grid-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .pokemons-grid {
     --gap: 40px;
     --num--cols: 4;
@@ -59,7 +53,6 @@ body.darker .order-butt {
 }
 
 .filter-butt:hover, .order-butt:hover {
-    transform: scale(1.3);
     filter:saturate(200%);
     cursor: pointer;
 }

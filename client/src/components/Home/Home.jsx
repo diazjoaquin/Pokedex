@@ -167,8 +167,6 @@ export default function Home () {
                             })
                         }
             </div>
-            {/* <Pagination pokemonsPerPage={pokemonsPerPage} pokemons={pokemons.length} pagination={pagination} currentPage={currentPage}
-                handlePrevious={handlePrevious} handleNext={handleNext}/> */}
                 <br></br>
                 <br></br>
             <Footer/>

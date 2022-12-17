@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { deletePokemon, getPokemonDetail, clearDetail } from '../../redux/actions/index.js';
 import './Details.css';
 import Nav from "../Nav/Nav.jsx";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Footer from "../Footer/Footer.jsx";
+import ProgressBar from "@ramonak/react-progress-bar";
+
 
 export default function Details (props) {
 
@@ -29,25 +31,24 @@ export default function Details (props) {
     return (
         <section className="details-section">
             <Nav/>
-            <Link to={'/home'}>
-                <div className="back-home-container"><button className="back-home-butt">Back Home</button></div>
-            </Link>
             <div className="mother-cont">
                 <div className="detail-cont">
-                    <h2>{detail.name}</h2>
-                    <span className="pokemon-img-cont"><img src={detail.imgUrl} alt=""/></span>
-                    <div className="type-cont">{detail.types?.map((type) => {
-                        return <span id="icon" className={type} key={type + id}><img src={`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${type}.svg`} alt=""/></span>;
-                        })
-                    }
+                    <div className="left">
+                        <h2>{detail.name}</h2>
+                        <span className="pokemon-img-cont"><img src={detail.imgUrl} alt=""/></span>
+                        <div className="type-cont">{detail.types?.map((type) => {
+                            return <span id="icon" className={type} key={type + id}><img src={`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${type}.svg`} alt=""/></span>;
+                            })
+                        }
+                        </div>
                     </div>
                     <div className="stats-cont">
-                        <div className="heart">HP: {detail.hp}</div>
-                        <div className="attack">ATTACK: {detail.attack}</div>
-                        <div className="defense">DEFENSE: {detail.defense}</div>
-                        <div className="speed">SPEED: {detail.speed}</div>
-                        <div className="height">HEIGHT: {detail.height}</div>
-                        <div className="weight">WEIGHT: {detail.weight}</div>
+                        <div>HP: </div><ProgressBar completed={Math.round((detail.hp * 100)/ 400).toString()} maxCompleted={100} height="25px" bgColor="#F00400" className="stat"/>
+                        <div>Attack: </div><ProgressBar completed={Math.round((detail.attack * 100)/ 350).toString()} maxCompleted={100} height="25px" bgColor="#FAA016" className="stat"/>
+                        <div>Defense: </div><ProgressBar completed={Math.round((detail.defense * 100)/ 400).toString()} maxCompleted={100} height="25px" bgColor="#F0D11F" className="stat"/>
+                        <div>Speed: </div><ProgressBar completed={Math.round(detail.speed).toString()} maxCompleted={100} height="25px" bgColor="#FC0D88" className="stat"/>
+                        <div>Height: </div><ProgressBar completed={Math.round((detail.height * 100)/ 150).toString()} maxCompleted={100} height="25px" bgColor="#7B37DB" className="stat"/>
+                        <div>Weight: </div><ProgressBar completed={Math.round((detail.weight * 100)/ 300).toString()} maxCompleted={100} height="25px" bgColor="#AB2DFC" className="stat"/>
                     </div>
                     { detail.custom ? <div className="delete-cont"><button className="delete-button" onClick={(e) => handleDelete(e)}>delete</button></div> : null}
                 </div>

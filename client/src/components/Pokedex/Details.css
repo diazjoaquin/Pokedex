@@ -13,15 +13,20 @@
 
 .detail-cont {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: rgb(229, 14, 14);
-    width: 40%;
-    height: 880px;
+    width: 80%;
+    height: 60%;
     border-radius: 30px;
     margin-top: 30px;
     color: #fff;
     filter: drop-shadow(0 0 5px rgb(63, 62, 62));
 }
+
+.left {
+    width: 60%;
+}
+
 
 body.darker .detail-cont {
     background-color: #39383c;
@@ -40,7 +45,7 @@ body.darker .detail-cont {
     height: 70%;
     background: url("https://www.iconninja.com/files/965/672/888/longico-pikachu-pokeball-pokemon-icon.svg");
     background-position: center;
-    background-size:cover;
+    background-size: cover;
 }
 
 .detail-cont span img {
@@ -50,9 +55,13 @@ body.darker .detail-cont {
 
 .stats-cont {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+    margin: 200px 50px;
 }
+
 
 .type-cont {
     display: flex;
@@ -111,3 +120,4 @@ body.darker .delete-button:hover{
     margin-top: 30px;
     margin-left: 40px;
 }
+

@@ -4,7 +4,6 @@ import Home from './components/Home/Home.jsx';
 import Create from './components/Create/Create-Form';
 import Details from './components/Pokedex/Details';
 
-
 function App() {
   return (
     <div className="App">
