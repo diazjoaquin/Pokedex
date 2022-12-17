@@ -43,12 +43,12 @@ export default function Details (props) {
                         </div>
                     </div>
                     <div className="stats-cont">
-                        <div>HP: </div><ProgressBar completed={Math.round((detail.hp * 100)/ 400).toString()} maxCompleted={100} height="25px" bgColor="#F00400" className="stat"/>
-                        <div>Attack: </div><ProgressBar completed={Math.round((detail.attack * 100)/ 350).toString()} maxCompleted={100} height="25px" bgColor="#FAA016" className="stat"/>
-                        <div>Defense: </div><ProgressBar completed={Math.round((detail.defense * 100)/ 400).toString()} maxCompleted={100} height="25px" bgColor="#F0D11F" className="stat"/>
-                        <div>Speed: </div><ProgressBar completed={Math.round(detail.speed).toString()} maxCompleted={100} height="25px" bgColor="#FC0D88" className="stat"/>
-                        <div>Height: </div><ProgressBar completed={Math.round((detail.height * 100)/ 150).toString()} maxCompleted={100} height="25px" bgColor="#7B37DB" className="stat"/>
-                        <div>Weight: </div><ProgressBar completed={Math.round((detail.weight * 100)/ 300).toString()} maxCompleted={100} height="25px" bgColor="#AB2DFC" className="stat"/>
+                        <div>HP: </div><ProgressBar completed={detail.hp.toString()} maxCompleted={400} height="25px" bgColor="#F00400" className="stat"/>
+                        <div>Attack: </div><ProgressBar completed={detail.attack.toString()} maxCompleted={350} height="25px" bgColor="#FAA016" className="stat"/>
+                        <div>Defense: </div><ProgressBar completed={detail.defense.toString()} maxCompleted={400} height="25px" bgColor="#F0D11F" className="stat"/>
+                        <div>Speed: </div><ProgressBar completed={detail.speed.toString()} maxCompleted={100} height="25px" bgColor="#FC0D88" className="stat"/>
+                        <div>Height: </div><ProgressBar completed={detail.height.toString()} maxCompleted={150} height="25px" bgColor="#7B37DB" className="stat"/>
+                        <div>Weight: </div><ProgressBar completed={detail.weight.toString()} maxCompleted={300} height="25px" bgColor="#AB2DFC" className="stat"/>
                     </div>
                     { detail.custom ? <div className="delete-cont"><button className="delete-button" onClick={(e) => handleDelete(e)}>delete</button></div> : null}
                 </div>
