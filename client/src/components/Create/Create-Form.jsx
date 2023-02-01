@@ -101,7 +101,7 @@ const Create = () => {
         alert("Pokemon created");
         history.push("/home");
         
-    }
+    }   
 
     return (
         <section className="create-section">
