@@ -197,3 +197,10 @@ body.darker .card-cont {
     filter: drop-shadow(0 0 10px #539DDF);
     background: #539DDF;
 }
+
+@media (max-width: 600px) {
+    .card-cont {
+        width: 100%;
+        height: 100%;
+    }
+}

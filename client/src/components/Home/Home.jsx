@@ -146,7 +146,7 @@ export default function Home () {
                         <option value="not-created">Not Customized</option>
                     </select>
                 </div>
-                <div>
+                <div className='reset'>
                     <button type='submit' className='reset-button' onClick={(event) => handleReset(event)}>Reset</button>
                 </div>
             </div>

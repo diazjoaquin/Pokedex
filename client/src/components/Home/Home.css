@@ -62,3 +62,23 @@ body.darker .order-butt {
     filter:saturate(200%);
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+
+    .pokemons-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .filt-order-cont {
+        display: block;
+    }
+
+    .filters, .order, .reset {
+        display: flex;
+        justify-content: center;
+        padding: 3px 0;
+    }
+
+    
+}

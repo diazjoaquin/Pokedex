@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 110px;
     background-color: red;
 }
@@ -59,3 +59,22 @@ body.darker .create-button {
     margin-right: 5px;
 }
 
+@media (max-width: 600px) {
+
+    .navbar {
+        width: 100%;  
+        display: flex;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .searchbar-cont {
+        width: 90%;
+    }
+
+    .create-cont {
+        display: none;
+    }
+}
